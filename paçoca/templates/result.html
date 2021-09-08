@@ -1,0 +1,20 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Resultado</title>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    </head>
+    <body>
+        <div class="card">
+            <div class="title-card">
+                <h3>Fintech Paçoca</h3>
+            </div>
+            <div class="content">
+                Olá {{data.nome}},<br> juntando R${{data.mensalidade}} todo mês,<br> você terá R${{data.expectativa}} (de juros), em {{data.tempo}}.
+                <br>
+                <a href="{% url 'home' %}">Simular novamente</a>
+            </div>
+        </div>
+    </body>
+</html>

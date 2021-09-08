@@ -1,0 +1,45 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Simulador</title>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    </head>
+    <body>
+        <div class="card">
+            <div class="title-card">
+                <h3>Fintech Paçoca</h3>
+            </div>
+            <div class="form-body">
+                <div>
+                    <b>Simulador</b>
+                </div>
+                <div class="form">
+                    <form action="{% url 'result' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="input">
+                            <label for="input_name" class="col-4">Name:</label>
+                            <input type="text" name="nome" id="input_name" class="col-8">
+                        </div>
+                        <div class="input">
+                            <label for="input_mensalidade">Mensalidade:</label>
+                            <input type="text" name="mensalidade" id="input_mensalidade">
+                        </div>
+                        <div class="input">
+                            <label for="input_tempo">Tempo:</label>
+                            <select name="tempo" id="input_tempo">
+                                <option value="1">6 meses</option>
+                                <option value="2">12 meses</option>
+                                <option value="3">18 meses</option>
+                                <option value="4">24 meses</option>
+                            </select>
+                        </div>
+                        <div class="d-flex justify-content-center mt-3">
+                            <input type="submit" class='btn' value="Simular">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
